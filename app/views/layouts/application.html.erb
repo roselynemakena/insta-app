@@ -48,10 +48,36 @@
         <a class="navbar-brand" href="#">InstaApp</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
+            <li><%= link_to "Linkdf1", "/path1"  %></li>
             <li><%= link_to "Link2", "/path2"  %></li>
             <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "Link3", "/path3"  %></li>
           </ul>
+          <% if current_user %>
+          <ul class="nav navbar-right col-md-6 nav-btn">
+          <li class="dropdown nav-btn">
+          <li class="col-md-5 username padding-top-15"><%= '<i class="fa fa-user"></i>'.html_safe+" " +  truncate(current_user.email, length: 25).html_safe %></li>
+          <li class="col-md-4 settings padding-top-0">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="fa fa-cog"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to '<i class="fa fa-user"></i>'.html_safe + "  Edit Profile", edit_user_registration_path(current_user) %></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+           <li><%= link_to '<i class="fa fa-sign-out"></i>'.html_safe + "  Logout", logout_path  %></li>
+
+            <li class="logout"><%= link_to '<i class="fa fa-envelope"></i>'.html_safe + " Developer", 'https://github.com/roselynemakena' %></li>
+          </ul>
+        </li>
+          </ul>
+          <% else %>
+          <ul class="nav navbar-right col-md-4 ">
+            <li class="col-md-3 no-padding"><%= link_to "SignUp", new_user_registration_path %></li>
+            <li class="col-md-2 no-padding"><%= link_to "Login", login_path %></li>
+          </ul>
+
+          <% end %>
         </div>
       </div>
     </div>
@@ -62,17 +88,6 @@
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
       </div><!--/row-->
 
       <footer>
