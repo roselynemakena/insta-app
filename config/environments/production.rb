@@ -12,7 +12,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.default_url_options = {:host => 'https://insta-app-makena.herokuapp.com', :protocol => 'https'}
+  config.action_mailer.default_url_options = {:host => 'insta-app-makena.herokuapp.com', :protocol => 'https'}
 
   # Rails.application.routes.default_url_options[:host] = 'https://insta-app-makena.herokuapp.com'
 
