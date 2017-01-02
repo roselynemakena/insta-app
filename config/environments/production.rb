@@ -10,9 +10,12 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  config.action_mailer.delivery_mehod = :smtp
+  config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.default_url_options = {:host => 'https://insta-app-makena.herokuapp.com', :protocol => 'https'}
+
+  # Rails.application.routes.default_url_options[:host] = 'https://insta-app-makena.herokuapp.com'
+
 
 
   # Full error reports are disabled and caching is turned on.
