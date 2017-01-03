@@ -17,7 +17,8 @@ show_error("Failed to load credit card processing functionality. Please reload t
 return false;
 };
 
-$("cc_form").on('submit', submitHandler);
+$(".cc_form").on('submit', submitHandler);
+
 stripeResponseHandler = function (status, response) {
 var token, $form;
 $form = $('.cc_form');
