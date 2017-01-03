@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, ©tial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "InstaApp" %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -49,12 +51,15 @@
         <%= link_to "InstaApp",root_path, class: 'navbar-brand logo' %></a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Linkdf1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "Insta Feed", images_path  %></li>
           </ul>
           <% if current_user %>
+          <ul class="nav navbar-nav">
+
+            <li><%= link_to "My Profile", "#"  %></li>
+            <li><%= link_to "My Friends", "#"  %></li>
+            <li><%#= link_to "Link3", "/path3"  %></li>
+          </ul>
           <ul class="nav navbar-right col-md-6 nav-btn">
           <li class="dropdown nav-btn">
           <li class="col-md-5 username padding-top-15"><%= '<i class="fa fa-user"></i>'.html_safe+" " +  truncate(current_user.email, length: 25).html_safe %></li>
