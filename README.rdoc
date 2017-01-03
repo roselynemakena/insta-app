@@ -4,22 +4,20 @@ An instagram like app.
 
 Things you may want to cover:
 
-* Ruby version
+== Ruby version
 `~> 2.0`
 
 
-
-
-** Configuration
+== Configuration
 `bundle install`
 
-**Features
+== Features
 
 * Authentication
-- Stripe payments integration
-+ Image management through carrierwave and Imagemagick
-+ AWS photo management integration
+* Stripe payments integration
+* Image management through carrierwave and Imagemagick
+* AWS photo management integration
 
 
-* Deployment on Heroku
+== Deployment on Heroku
 https://insta-app-makena.herokuapp.com/
