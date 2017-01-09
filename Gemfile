@@ -8,6 +8,7 @@ gem 'rails', '4.2.5.1'
 gem 'sass-rails', '~> 5.0'
 
 gem 'devise'
+
 gem 'twitter-bootstrap-rails'
 
 gem 'stripe'
@@ -36,7 +37,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '3.0.0', :require => 'bcrypt'
+# gem 'bcrypt', '~> 3.1.9'
+# gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '3.0.0', :require => 'bcrypt'
+# gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
+# gem 'bcrypt', '3.1.9', platforms: :ruby
 
 # Use Unicorn as the app server
 # gem 'unicorn'

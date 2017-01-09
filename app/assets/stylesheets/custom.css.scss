@@ -1,8 +1,19 @@
+.navbar-default {
+background-color: #1b1b1b !important;
+color: #ddd !important;
+}
+
+
 .center{
   text-align: center;
 }
 
-
+.jumbotron {
+  background-image: url('cam.jpg') !important;
+  height: 150% !important;
+  background-repeat: no-repeat;
+  background-position: 30% 50%; 
+}
 .padding-top-15 {
   padding-top: 15px;
 }

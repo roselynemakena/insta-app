@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   # GET /images
@@ -29,7 +30,7 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        format.html { redirect_to @image, notice: 'Image was successfully uploaded.' }
         format.json { render :show, status: :created, location: @image }
       else
         format.html { render :new }
