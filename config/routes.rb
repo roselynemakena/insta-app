@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'registrations'}
   root 'welcome#index'
   get 'about', to: 'welcome#about'
+  get 'my_profile', to: 'users#my_profile'
 
 
   devise_scope :user do

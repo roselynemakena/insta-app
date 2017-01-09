@@ -8,12 +8,14 @@
             </div>
 </div>
     <% @images.each do |image| %>
-    <div class="card col-md-4" style="width: 20rem;">
-  <div class="card-block">
+    <div class="card col-md-3" style="width: 20rem;">
+  <div class="card-block"><%=image.user_id%><%= current_user.id%>
     <h4 class="card-title"><%= link_to image.name, image_path(image) %></h4>
     <p class="card-text"><%= image_tag image.picture.url, size: '100x100' %></p>
-    <p class="card-text"><%= image.user.try(:email) %></p>
-            <% if image.creator?(current_user) %>
+    <small class="text-muted"><%= image.user.try(:email) %></small>
+    <hr>
+    <small class="text-muted">Uploaded: <%= time_ago_in_words(image.created_at) %> ago</small>
+    <% if image.user_id == current_user.id %>
         <p>
 
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

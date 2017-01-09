@@ -1,0 +1,24 @@
+<h2>My profile</h2>
+
+<% @images.each do |image|%>
+<div class="col-md-4 card" style="width: 20rem;">
+  <div class="card-block">
+    <h4 class="card-title"><%= image.name %></h4>
+    <p class="card-text"><%= image_tag image.picture.url, size: '100x100' %></p>
+        <% if image.user_id == current_user.id %>
+        <p>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_image_path(image), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      image_path(image),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </p>
+
+         <% end %>
+  </div>
+</div>
+
+<% end %>
