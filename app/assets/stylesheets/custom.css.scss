@@ -2,6 +2,17 @@
 background-color: #1b1b1b !important;
 color: #ddd !important;
 }
+.actions {
+  padding: 0px;
+  margin:5px;
+}
+.full-span{
+  display: inline-block;
+}
+.pic {
+   border-radius: 25px;
+    border: 2px solid transparent;
+}
 .card {
     position: relative;
     display: -webkit-box;

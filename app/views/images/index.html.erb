@@ -10,9 +10,12 @@
     <% @images.each do |image| %>
     <div class="card col-md-3" style="width: 20rem;">
     <h4 class="card-title"><%= link_to image.name, image_path(image) %></h4>
-    <p class="card-text"><%= image_tag image.picture.url, size: '100x100' %></p>
+    <p class="card-text"><%=link_to image_tag(image.picture.url, size: '150x100', class: "pic" ), image_path(image)%></p>
     <small class="text-muted"><%= image.user.try(:email) %></small>
-    <hr>
+        </br>
+
+  <%= render 'imageactions'%>
+        </br>
     <small class="text-muted">Uploaded: <%= time_ago_in_words(image.created_at) %> ago</small>
     <% if user_signed_in? and image.user_id == current_user.id %>
         <p>
